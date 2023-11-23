@@ -1,6 +1,6 @@
 import requests
 import bs4
-from flask import Flask
+from flask import Flask,render_template
 
 
 app = Flask(__name__)
@@ -24,4 +24,5 @@ def index():
         a = [i.h4.text,i.p.text,i.a["href"],"https://www1.pu.edu.tw/~tcyang/"+i.a.img["src"]]
         l.append(a)
     print(l)
-    return l
+    return render_template("index.html",a =l)
+app.run()
