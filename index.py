@@ -25,4 +25,3 @@ def index():
         l.append(a)
     print(l)
     return render_template("index.html",a =l)
-app.run()
